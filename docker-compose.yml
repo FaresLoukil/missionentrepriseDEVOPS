@@ -16,6 +16,7 @@ services:
   myapp:
     image: fares249/myapp:latest
     container_name: myapp
+    restart: always
     depends_on:
       - mysql
     ports:
@@ -28,6 +29,7 @@ services:
   prometheus:
     image: prom/prometheus
     container_name: prometheus
+    restart: always
     ports:
       - "9090:9090"
     volumes:
@@ -38,6 +40,7 @@ services:
   grafana:
     image: grafana/grafana
     container_name: grafana
+    restart: always
     ports:
       - "3000:3000"
     depends_on:
